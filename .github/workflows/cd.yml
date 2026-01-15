@@ -1,0 +1,17 @@
+name: cd
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Deploy:
+    name: Deploy
+    runs-on: self-hosted
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Build app
+        run: bash scripts/buildprod.sh
