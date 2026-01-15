@@ -17,9 +17,6 @@ jobs:
       - name: Tests
         run: go test -cover ./...
       
-      - name: Style
-        run: test -z $(go fmt ./...)
-  
   style:
     name: Style
     runs-on: self-hosted
