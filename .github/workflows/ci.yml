@@ -19,3 +19,13 @@ jobs:
       
       - name: Style
         run: test -z $(go fmt ./...)
+  
+  style:
+    name: Style
+    runs-on: self-hosted
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      
+      - name: Style
+        run: test -z $(go fmt ./...)
