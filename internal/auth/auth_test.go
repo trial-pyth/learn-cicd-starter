@@ -64,4 +64,3 @@ func TestGetAPIKey_MalformedHeader_NoSpace(t *testing.T) {
 		t.Errorf("Expected empty API key, got: %s", apiKey)
 	}
 }
-
