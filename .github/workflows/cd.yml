@@ -15,7 +15,7 @@ jobs:
       - name: Run Database Migrations
         run: ./scripts/migrateup.sh
       
-  Deploy:
+  Deployy:
     name: Deploy
     runs-on: [self-hosted, X64, Windows ,win]
 
