@@ -13,8 +13,8 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Build app
-        run: bash scripts/buildprod.sh
+      # - name: Build app
+      #   run: bash scripts/buildprod.sh
 
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
