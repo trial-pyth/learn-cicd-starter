@@ -8,7 +8,7 @@ on:
 jobs:
   tests:
     name: Tests
-    runs-on: self-hosted
+    runs-on: wsl
 
     steps:
       - name: Check out code
