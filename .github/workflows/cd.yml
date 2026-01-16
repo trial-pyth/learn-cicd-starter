@@ -14,6 +14,8 @@ jobs:
 
       - name: Run Database Migrations
         run: ./scripts/migrateup.sh
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
       
   Deployy:
     needs: Deploy
