@@ -25,7 +25,7 @@ jobs:
       
   style:
     name: Style
-    runs-on: self-hosted
+    runs-on: wsl
     steps:
       - name: Check out code
         uses: actions/checkout@v4
