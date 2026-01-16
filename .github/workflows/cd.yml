@@ -10,14 +10,10 @@ jobs:
     runs-on: [self-hosted, X64, Windows ,win]
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v4
-
-      # - name: Build app
-      #   run: bash scripts/buildprod.sh
-
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
+        shell: cmd
 
       - name: Push to Artifact Registry
         run: docker push us-central1-docker.pkg.dev/oceanic-column-484505-s1/notely-ar-repo/trial-pyth/notely:latest
+        shell: cmd
