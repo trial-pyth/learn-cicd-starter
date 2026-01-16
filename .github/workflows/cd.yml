@@ -16,6 +16,7 @@ jobs:
         run: ./scripts/migrateup.sh
       
   Deployy:
+    needs: Deploy
     name: Deploy
     runs-on: [self-hosted, X64, Windows ,win]
 
