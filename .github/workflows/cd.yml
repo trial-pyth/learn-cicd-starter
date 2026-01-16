@@ -24,3 +24,4 @@ jobs:
 
       - name: Deploy to Cloud Run
         run: gcloud run deploy notely --image us-central1-docker.pkg.dev/oceanic-column-484505-s1/notely-ar-repo/trial-pyth/notely:latest --region us-central1 --allow-unauthenticated --project oceanic-column-484505-s1 --max-instances=4
+        shell: cmd
