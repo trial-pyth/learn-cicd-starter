@@ -7,6 +7,16 @@ on:
 jobs:
   Deploy:
     name: Deploy
+    runs-on: [self-hosted ,Linux ,X64]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Run Database Migrations
+        run: ./scripts/migrateup.sh
+      
+  Deploy:
+    name: Deploy
     runs-on: [self-hosted, X64, Windows ,win]
 
     steps:
@@ -22,9 +32,9 @@ jobs:
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/oceanic-column-484505-s1/notely-ar-repo/trial-pyth/notely:latest .
         shell: cmd
 
-      - name: Run Database Migrations
-        run: '"C:\Program Files\Git\bin\bash.exe" -lc "./scripts/migrateup.sh"'
-        shell: cmd
+      # - name: Run Database Migrations
+      #   run: '"C:\Program Files\Git\bin\bash.exe" -lc "./scripts/migrateup.sh"'
+      #   shell: cmd
 
 
       - name: Deploy to Cloud Run
