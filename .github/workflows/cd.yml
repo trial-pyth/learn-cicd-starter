@@ -7,7 +7,7 @@ on:
 jobs:
   Deploy:
     name: Deploy
-    runs-on: self-hosted
+    runs-on: win
 
     steps:
       - name: Check out code
@@ -15,3 +15,9 @@ jobs:
 
       - name: Build app
         run: bash scripts/buildprod.sh
+
+      - name: 'Use gcloud CLI'
+        run: 'gcloud info'
+
+      - name: Push to Artifact Registry
+        run: docker push us-central1-docker.pkg.dev/oceanic-column-484505-s1/notely-ar-repo/trial-pyth/notely:latest
