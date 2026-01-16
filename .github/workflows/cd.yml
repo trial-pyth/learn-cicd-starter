@@ -22,6 +22,10 @@ jobs:
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/oceanic-column-484505-s1/notely-ar-repo/trial-pyth/notely:latest .
         shell: cmd
 
+      - name: Run Database Migrations
+        run: ./scripts/migrateup.sh
+        shell: 'C:\Program Files\Git\bin\bash.exe'
+
       - name: Deploy to Cloud Run
         run: gcloud run deploy notely --image us-central1-docker.pkg.dev/oceanic-column-484505-s1/notely-ar-repo/trial-pyth/notely:latest --region us-central1 --allow-unauthenticated --project oceanic-column-484505-s1 --max-instances=4
         shell: cmd
