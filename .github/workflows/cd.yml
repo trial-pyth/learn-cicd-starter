@@ -7,7 +7,7 @@ on:
 jobs:
   Deploy:
     name: Deploy
-    runs-on: [self-hosted, win]
+    runs-on: [self-hosted, X64, Windows ,win]
 
     steps:
       - name: Check out code

@@ -8,7 +8,7 @@ on:
 jobs:
   tests:
     name: Tests
-    runs-on: [self-hosted, wsl]
+    runs-on: [self-hosted ,Linux ,X64]
 
     steps:
       - name: Check out code
